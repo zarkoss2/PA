@@ -20,7 +20,6 @@ include './include/header-admin.php';
 </ul>
 
 <div class="tab-content">
-    <!-- Onglet Général -->
     <div class="tab-pane fade show active" id="general" role="tabpanel">
         <div class="admin-card p-4">
             <h5 class="mb-4">Paramètres généraux</h5>
@@ -58,7 +57,6 @@ include './include/header-admin.php';
         </div>
     </div>
 
-    <!-- Onglet Email -->
     <div class="tab-pane fade" id="email" role="tabpanel">
         <div class="admin-card p-4">
             <h5 class="mb-4">Configuration des emails</h5>
@@ -91,7 +89,6 @@ include './include/header-admin.php';
         </div>
     </div>
 
-    <!-- Onglet Sécurité -->
     <div class="tab-pane fade" id="securite" role="tabpanel">
         <div class="admin-card p-4">
             <h5 class="mb-4">Paramètres de sécurité</h5>
@@ -133,7 +130,6 @@ include './include/header-admin.php';
         </div>
     </div>
 
-    <!-- Onglet Paiements -->
     <div class="tab-pane fade" id="paiements" role="tabpanel">
         <div class="admin-card p-4">
             <h5 class="mb-4">Configuration des paiements</h5>

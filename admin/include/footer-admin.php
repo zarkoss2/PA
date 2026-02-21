@@ -1,5 +1,4 @@
-<?php?>        
-</main>
+        </main>
     </div>
 </div>
 
