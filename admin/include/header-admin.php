@@ -1,8 +1,10 @@
 <?php
-$current_path = dirname($_SERVER['REQUEST_URI']);
-$admin_base = '/webpa/admin';
-if (strpos($current_path, '/gestion-') !== false || strpos($current_path, '/include') !== false) {
-    $admin_base = '/webpa/admin';
+// Déterminer le chemin de base pour les liens
+$base_url = '/admin';
+$current_dir = dirname($_SERVER['REQUEST_URI']);
+// Ajuster si dans un sous-dossier
+if (strpos($current_dir, '/gestion-') !== false) {
+    $base_url = '/admin';
 }
 ?><!DOCTYPE html>
 <html lang="fr">
@@ -12,13 +14,13 @@ if (strpos($current_path, '/gestion-') !== false || strpos($current_path, '/incl
     <title>Administration - Silver Happy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/webpa/style-admin.css">
+    <link rel="stylesheet" href="/style-admin.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="/webpa/admin/index.php">
-            <img src="/webpa/img/logo.png" alt="Logo" class="admin-logo">
+        <a class="navbar-brand d-flex align-items-center" href="<?php echo $base_url; ?>/index.php">
+            <img src="/img/logo.png" alt="Logo" class="admin-logo">
             <span class="brand-text ms-2">Silver Happy - Admin</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAdmin" aria-controls="navbarAdmin" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +35,7 @@ if (strpos($current_path, '/gestion-') !== false || strpos($current_path, '/incl
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <li><a class="dropdown-item" href="#">Mon profil</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/webpa/login.php">Déconnexion</a></li>
+                        <li><a class="dropdown-item" href="/login.php">Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -48,62 +50,62 @@ if (strpos($current_path, '/gestion-') !== false || strpos($current_path, '/incl
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/webpa/admin/index.php">
+                        <a class="nav-link" aria-current="page" href="<?php echo $base_url; ?>/index.php">
                             <i class="bi bi-speedometer2"></i> Tableau de bord
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-utilisateurs/">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-utilisateurs/">
                             <i class="bi bi-people"></i> Gestion utilisateurs
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-prestations/">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-prestations/">
                             <i class="bi bi-briefcase"></i> Gestion prestations
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-devis.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-devis.php">
                             <i class="bi bi-file-earmark-text"></i> Gestion devis
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-evenements.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-evenements.php">
                             <i class="bi bi-calendar3"></i> Gestion événements
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-abonnements.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-abonnements.php">
                             <i class="bi bi-credit-card"></i> Gestion abonnements
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-boutique/">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-boutique/">
                             <i class="bi bi-shop"></i> Gestion boutique
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/gestion-contenus/">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/gestion-contenus/">
                             <i class="bi bi-file-earmark-richtext"></i> Gestion contenus
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/facturation-paiements.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/facturation-paiements.php">
                             <i class="bi bi-cash-coin"></i> Facturation & paiements
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/notifications.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/notifications.php">
                             <i class="bi bi-bell"></i> Notifications système
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/logs.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/logs.php">
                             <i class="bi bi-file-text"></i> Logs & supervision
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/webpa/admin/parametres.php">
+                        <a class="nav-link" href="<?php echo $base_url; ?>/parametres.php">
                             <i class="bi bi-gear"></i> Paramètres plateforme
                         </a>
                     </li>
