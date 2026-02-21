@@ -4,7 +4,6 @@ include './include/header-admin.php';
 
 <div class="page-title">Tableau de bord</div>
 
-<!-- Statistiques globales -->
 <div class="row mb-5">
     <div class="col-md-3 col-sm-6">
         <div class="stat-card primary">
@@ -32,7 +31,6 @@ include './include/header-admin.php';
     </div>
 </div>
 
-<!-- Graphiques et activités récentes -->
 <div class="row">
     <div class="col-lg-8">
         <div class="admin-card p-4">
@@ -78,7 +76,6 @@ include './include/header-admin.php';
     </div>
 </div>
 
-<!-- Prochains événements -->
 <div class="row mt-4">
     <div class="col-lg-6">
         <div class="admin-card p-4">
